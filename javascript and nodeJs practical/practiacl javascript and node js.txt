@@ -1,0 +1,142 @@
+1) What is a Node.js file and NPM?
+ans =
+
+node.js file = 
+node.js file contain tasks that will be executed on certain events.
+node.js files must be initialted on the server before having any effect.
+node.js file have extension ".js".
+
+NPM =
+NPM stnads for node package manager.it resposible to manage module,packahe in node.js conatins all the files we need for a module.
+its provide online repository for module and provide command line for version of node.js
+
+
+2) Write a JavaScript program to sort words in Alphabetical order.
+source code :
+
+const prompt =require("prompt-sync")({sigint:true})
+
+const string= prompt("enter your sentence: ");
+const word =string.split(' ');
+
+word.sort();
+
+console.log("the sorted word are: ");
+for(const element of word){
+    console.log(element);
+}
+
+output :
+
+PS C:\Users\UnboxIt\Desktop\javascript and nodeJs practical> node sortword.js       
+enter your sentence: i am from pune
+the sorted word are:
+am
+from
+i
+pune
+
+
+3) Write a JavaScript program to find ASCII value of character.
+source code :
+
+const prompt =require("prompt-sync")({sigint:true})
+
+const string= prompt("enter your character: ");
+
+const result =string.charCodeAt(0);
+
+console.log(`the ascii value is: ${result}`);
+
+output :
+
+PS C:\Users\UnboxIt\Desktop\javascript and nodeJs practical> node asciivalue.js
+enter your character: a
+the ascii value is: 97
+PS C:\Users\UnboxIt\Desktop\javascript and nodeJs practical> node asciivalue.js
+enter your character: A
+the ascii value is: 65
+
+4) Write a JavaScript program to make a Simple Calculator.
+
+source code :
+
+const prompt =require("prompt-sync")({sigint:true})
+
+const operator= prompt("enter operator(+,-,*,/): ");
+
+const number1 =parseFloat(prompt("enter first number :"));
+const number2 =parseFloat(prompt("enter second number :"));
+
+let result;
+if(operator =='+'){
+    result=number1+number2;
+}
+else if(operator=='-'){
+    result=number1-number2;
+}
+else if(operator=='*'){
+    result=number1*number2;
+}
+else{
+    result=number1/number2;
+}
+console.log(`${number1} ${operator} ${number2} = ${result}`);
+
+output :
+
+PS C:\Users\UnboxIt\Desktop\javascript and nodeJs practical> node calculator.js
+enter operator(+,-,*,/): +
+enter first number :3
+enter second number :4
+3 + 4 = 7
+PS C:\Users\UnboxIt\Desktop\javascript and nodeJs practical> node calculator.js
+enter operator(+,-,*,/): -
+enter first number :3
+enter second number :1
+3 - 1 = 2
+PS C:\Users\UnboxIt\Desktop\javascript and nodeJs practical> node calculator.js
+enter operator(+,-,*,/): *
+enter first number :4
+enter second number :4
+4 * 4 = 16
+PS C:\Users\UnboxIt\Desktop\javascript and nodeJs practical> node calculator.js
+enter operator(+,-,*,/): /
+enter first number :5
+enter second number :6
+5 / 6 = 0.8333333333333334
+
+
+5) Write a JavaScript Program to find sum of n natural numbers
+using recursion.
+
+source code :
+
+const prompt =require("prompt-sync")({sigint:true})
+
+function sum(num){
+    if(num>0){
+        return num+sum(num-1);
+    }
+    else
+    {
+        return num;
+    }
+}
+
+const number=parseInt(prompt("enter positive number : "));
+const result=sum(number);
+
+console.log(`the sum is ${result}`);
+
+Output :
+
+PS C:\Users\UnboxIt\Desktop\javascript and nodeJs practical> node sum.js
+enter positive number : 5
+the sum is 15
+PS C:\Users\UnboxIt\Desktop\javascript and nodeJs practical> node sum.js
+enter positive number : 10
+the sum is 55
+PS C:\Users\UnboxIt\Desktop\javascript and nodeJs practical> node sum.js
+enter positive number : 7
+the sum is 28
